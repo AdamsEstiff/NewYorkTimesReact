@@ -35,13 +35,11 @@ export default function Dashboard() {
                   <Card.Content extra>
                   <Segment basic>
                     <Header floated='right'>
-                    <a href={item.url}>
-                      Leer Mas...
-                    </a>
+                      <a href={item.url}>
+                        Leer Mas...
+                      </a>
                     </Header>
-
                   </Segment>
-                   
                   </Card.Content>
                 </Card>
             )
