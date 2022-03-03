@@ -10,20 +10,27 @@ export default function Dashboard() {
     const data= await fetch('https://api.nytimes.com/svc/mostpopular/v2/emailed/7.json?api-key=Sh4Se8tNjMZuoV8DumlcbCRMRODv1Yy7')
     const dataJSON = await data.json();
     const newsPapers= dataJSON.results;
-  
-    setNoticias(newsPapers);
-    console.log(newsPapers);
+    const popularSimple= newsPapers.map(function(item){
+      var simple={};
+      simple['id']=item.id;
+      simple['title']=item.title;
+      simple['abstract']=item.abstract;
+      simple['url']=item.url;
+      var media =item.media[0];
+      simple['image']=media["media-metadata"][2];
+      return simple;
+    });
+    setNoticias(popularSimple);
   }
   return (
     <div>
       <Container textAlign='justified'>
       <Card.Group>
         {
-          
           noticias.map(item=>{
             return(
-  
-                <Card key={item.id}>
+                <Card key={item.id} color="violet">
+                   <Image src={item.image.url} wrapped ui={false} />
                   <Card.Content>
                     <Card.Header>
                       {item.title}
