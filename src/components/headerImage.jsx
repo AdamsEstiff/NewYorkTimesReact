@@ -3,6 +3,7 @@ import { Image } from 'semantic-ui-react'
  
 
 export default function headerImage({src}) {
+  
   return (
     <div>
         <a href="/">
