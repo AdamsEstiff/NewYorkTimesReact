@@ -22,7 +22,8 @@ export default function Api({api, text}) {
   }
 
 const [noticias, setNoticias]=useState([]);
-const newsFilters=noticias.filter(noticia => noticia.title.toLowerCase().includes(text.toLocaleLowerCase()))
+const newsFilters=noticias.filter(noticia => noticia.title.toLowerCase().includes(text.toLocaleLowerCase())
+      ||noticia.abstract.toLowerCase().includes(text.toLocaleLowerCase()))
   useEffect(()=>{
     setNews()
   }, []);
@@ -30,7 +31,7 @@ const newsFilters=noticias.filter(noticia => noticia.title.toLowerCase().include
   return (
     <div>
      {!newsFilters?'Cargando...':
-        newsFilters.length===0?
+        newsFilters.length1===0?
         <Container>
            <h1>No hay coincidencias</h1>
         </Container>:
