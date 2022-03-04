@@ -10,7 +10,9 @@ export default function ApiList({noticias}) {
           noticias.map(item=>{
             return(
                 <Card key={item.id} color="violet">
+                  { item.image.url ===undefined? '':
                    <Image src={item.image.url} wrapped ui={false} />
+                  }
                   <Card.Content>
                     <Card.Header>
                       {item.title}

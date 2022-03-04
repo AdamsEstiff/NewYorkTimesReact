@@ -9,7 +9,6 @@ export default function Filter({text, setText}) {
   
     const handleSubmit = (e)=>{
       e.preventDefault()
-      console.log(text);
     }
   
     return (

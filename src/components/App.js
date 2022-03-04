@@ -21,6 +21,6 @@ function App() {
     </Header>
   </Segment>
     <Api api={api} text={text}></Api>
-    </div>
+  </div>
 }
 export default App;

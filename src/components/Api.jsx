@@ -1,5 +1,6 @@
 import {useEffect, useState}  from 'react'
 import ApiList from './ApiList';
+import { Container } from 'semantic-ui-react';
 
 export default function Api({api, text}) {
   const setNews=async()=>{
@@ -27,6 +28,14 @@ const newsFilters=noticias.filter(noticia => noticia.title.toLowerCase().include
   }, []);
 
   return (
-    <ApiList noticias={newsFilters}></ApiList>
+    <div>
+     {!newsFilters?'Cargando...':
+        newsFilters.length===0?
+        <Container>
+           <h1>No hay coincidencias</h1>
+        </Container>:
+        <ApiList noticias={newsFilters}></ApiList>
+     }
+    </div>
   )
 }
