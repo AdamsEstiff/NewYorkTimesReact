@@ -13,7 +13,6 @@ export default function Api({api, text}) {
       simple['title']=item.title;
       simple['abstract']=item.abstract;
       simple['url']=item.url;
-      console.log(item.media.length);
       if(item.media.length===0){
         simple['image']=undefined;
       }else{
@@ -27,9 +26,10 @@ export default function Api({api, text}) {
 
   }
 
-const [noticias, setNoticias]=useState([]);
-const newsFilters=noticias.filter(noticia => noticia.title.toLowerCase().includes(text.toLocaleLowerCase())
+  const [noticias, setNoticias]=useState([]);
+  const newsFilters=noticias.filter(noticia => noticia.title.toLowerCase().includes(text.toLocaleLowerCase())
       ||noticia.abstract.toLowerCase().includes(text.toLocaleLowerCase()))
+
   useEffect(()=>{
     setNews()
   }, []);
@@ -37,7 +37,7 @@ const newsFilters=noticias.filter(noticia => noticia.title.toLowerCase().include
   return (
     <div>
      {!newsFilters?'Cargando...':
-        newsFilters.length1===0?
+        newsFilters.length===0?
         <Container>
            <h1>No hay coincidencias</h1>
         </Container>:

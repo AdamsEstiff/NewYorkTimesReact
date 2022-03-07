@@ -1,5 +1,5 @@
 import './App.css';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import Api from './Api';
 import HeaderImage from './headerImage';
 import Filter from './Filter';

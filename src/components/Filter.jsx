@@ -6,7 +6,7 @@ export default function Filter({text, setText}) {
     const handleInputChange=({target})=>{
       setText(target.value)
     }
-  
+
     const handleSubmit = (e)=>{
       e.preventDefault()
     }
