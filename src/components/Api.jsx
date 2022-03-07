@@ -13,8 +13,14 @@ export default function Api({api, text}) {
       simple['title']=item.title;
       simple['abstract']=item.abstract;
       simple['url']=item.url;
-      var media =item.media[0];
-      simple['image']=media["media-metadata"][2];
+      console.log(item.media.length);
+      if(item.media.length===0){
+        simple['image']=undefined;
+      }else{
+        var media =item.media[0];
+        simple['image']=media["media-metadata"][2];
+        
+      }
       return simple;
     });
     setNoticias(popularSimple);
