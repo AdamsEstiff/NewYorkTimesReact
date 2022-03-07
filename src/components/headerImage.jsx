@@ -1,5 +1,5 @@
 import React from 'react'
-import { Image, Loader, Dimmer } from 'semantic-ui-react'
+import { Image } from 'semantic-ui-react'
  
 
 export default function headerImage({src}) {
